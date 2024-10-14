@@ -1,9 +1,8 @@
-import time
 from pathlib import Path
 from typing import Optional, Tuple, Literal
 
 import plots
-from color_palate import ColorPalate, RED_GREEN, Color
+from color_palate import ColorPalate, Color, PROTANOPIA
 from grid import Circle, CircleGrid
 from image_mask import ImageMask
 from randoms import get_random_circle, SPREAD_CEIL
@@ -71,15 +70,24 @@ class ColorBlindEditor:
         return self._palate.get_random_color(on_mask)
 
 
+def generate_output_file_name(mask_path: str, color_palate: ColorPalate) -> str:
+    mask_path = Path(mask_path)
+    return "images/" + mask_path.stem + "_" + color_palate.name + mask_path.suffix
+
+
 def draw_image(
         mask_path: Path | str,
-        dest_path: Path | str,
+        dest_path: Path | str = None,
         *,
         reference_radius: int = 0.011,
         radius_unit: Literal["abs", "per"] = "per",
-        color_palate: ColorPalate = RED_GREEN,
-        layers: int = 4
+        color_palate: ColorPalate = PROTANOPIA,
+        layers: int = 5
 ) -> None:
+    if dest_path is None:
+        dest_path = generate_output_file_name(mask_path, color_palate)
+        print(dest_path)
+
     cbe = ColorBlindEditor(
         radius_unit=radius_unit,
         reference_radius=reference_radius,

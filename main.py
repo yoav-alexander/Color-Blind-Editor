@@ -1,6 +1,7 @@
 from contextlib import contextmanager
 from time import time
 
+import color_palate
 from color_blind_editor import draw_image
 
 
@@ -13,7 +14,9 @@ def timer():
 
 @timer()
 def main() -> None:
-    draw_image('masks/mask2.png', 'images/dest.png')
+    # for palate in color_palate.PALATES:
+    #    draw_image('masks/mask2.png', color_palate=palate)
+    draw_image('masks/mask2.png', color_palate=color_palate.GRAY_RED)
 
 
 if __name__ == '__main__':

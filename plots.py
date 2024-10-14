@@ -15,8 +15,10 @@ def plot(grid: CircleGrid, dest_path: str) -> None:
     plt.axis("off")
     plt.gca().set_aspect('equal')
     plt.gca().invert_yaxis()
+    plt.style.use("dark_background")
     plt.autoscale(True, tight=True)
-    plt.savefig(dest_path, bbox_inches='tight', pad_inches=0)
+    plt.savefig(dest_path, bbox_inches='tight', pad_inches=-0.1)
+    plt.close('all')
 
 
 def __debug_plot(grid: CircleGrid, dest_path: str) -> None:

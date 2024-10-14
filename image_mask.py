@@ -16,5 +16,6 @@ class ImageMask:
         return self._width, self._height
 
     def on_mask(self, x: int, y: int) -> bool:
+        assert 0 <= x < self._width and 0 <= y < self._height
         r, g, b, _ = self._image[y][x]
         return r < BLACK_CUTOFF and g < BLACK_CUTOFF and b < BLACK_CUTOFF
