@@ -24,7 +24,7 @@ def get_random_circle(
 
 
 def random_size(radius: float) -> float:
-    noise = np.clip(np.random.normal(MU, SIGMA), SPREAD_FLOOR, SPREAD_CEIL)
+    noise: float = np.clip(np.random.normal(MU, SIGMA), SPREAD_FLOOR, SPREAD_CEIL)
     return radius * noise
 
 

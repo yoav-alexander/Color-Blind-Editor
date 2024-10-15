@@ -22,8 +22,8 @@ class ColorBlindEditor:
             color_palate: ColorPalate,
             layers: int
     ):
-        self._grid = None
-        self._image_mask = None
+        self._grid: Optional[CircleGrid] = None
+        self._image_mask: Optional[ImageMask] = None
 
         self._radius_unit = radius_unit
         self._reference_radius = reference_radius
@@ -37,7 +37,7 @@ class ColorBlindEditor:
             self._reference_radius = self._image_mask.size[0] * self._reference_radius
 
         max_radius = self._reference_radius * SPREAD_CEIL
-        self._grid = CircleGrid(*self._image_mask.size, max_radius)
+        self._grid = CircleGrid(*self._image_mask.size, cell_size=max_radius)
 
         self._create_image()
         plots.plot(self._grid, dest_path)

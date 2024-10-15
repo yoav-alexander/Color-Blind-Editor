@@ -3,9 +3,9 @@ from matplotlib import pyplot as plt
 from grid import CircleGrid, Circle
 
 
-def plot_circle(circle: Circle) -> None:
-    circle = plt.Circle(circle.center, circle.radius, color=circle.color)
-    plt.gca().add_patch(circle)
+def plot_circle(circle_plot: Circle) -> None:
+    circle_plot = plt.Circle(circle_plot.center, circle_plot.radius, color=circle_plot.color)
+    plt.gca().add_patch(circle_plot)
 
 
 def plot(grid: CircleGrid, dest_path: str) -> None:

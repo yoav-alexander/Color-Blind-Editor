@@ -1,7 +1,7 @@
 import math
 from dataclasses import dataclass
 from itertools import chain
-from typing import List, Tuple, Optional
+from typing import List, Tuple, Optional, Iterable, Iterator
 
 from color_palate import Color
 
@@ -41,7 +41,7 @@ class CircleGrid:
             for check_circle in self._get_possible_intersections(circle)
         )
 
-    def _get_possible_intersections(self, circle: Circle):
+    def _get_possible_intersections(self, circle: Circle) -> Iterable[Circle]:
         cell_x, cell_y = int(circle.x // self._cell_size), int(circle.y // self._cell_size)
         return chain(*(
             self._grid[cell_y + y][cell_x + x]
@@ -58,5 +58,5 @@ class CircleGrid:
         cell_x, cell_y = int(circle.x // self._cell_size), int(circle.y // self._cell_size)
         self._grid[cell_y][cell_x].append(circle)
 
-    def __iter__(self):
+    def __iter__(self) -> Iterator[Circle]:
         return iter(chain(*[chain(*row) for row in self._grid]))

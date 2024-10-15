@@ -7,7 +7,7 @@ BLACK_CUTOFF = 0.3
 
 class ImageMask:
 
-    def __init__(self, mask_path):
+    def __init__(self, mask_path: str):
         self._image = mpimg.imread(mask_path)
         self._height, self._width, *_ = self._image.shape
 
