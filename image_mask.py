@@ -1,4 +1,3 @@
-from typing import Tuple
 
 from matplotlib import image as mpimg
 
@@ -12,7 +11,7 @@ class ImageMask:
         self._height, self._width, *_ = self._image.shape
 
     @property
-    def size(self) -> Tuple[int, int]:
+    def size(self) -> tuple[int, int]:
         return self._width, self._height
 
     def on_mask(self, x: int, y: int) -> bool:

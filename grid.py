@@ -1,7 +1,7 @@
 import math
 from dataclasses import dataclass
 from itertools import chain
-from typing import List, Tuple, Optional, Iterable, Iterator
+from typing import Optional, Iterable, Iterator
 
 from color_palate import Color
 
@@ -19,7 +19,7 @@ class Circle:
     color: Optional[Color] = None
 
     @property
-    def center(self) -> Tuple[int, int]:
+    def center(self) -> tuple[int, int]:
         return self.x, self.y
 
 
@@ -32,7 +32,7 @@ class CircleGrid:
 
         self._grid = self.setup_grid()
 
-    def setup_grid(self) -> List[List[List[Circle]]]:
+    def setup_grid(self) -> list[list[list[Circle]]]:
         return [[[] for _ in range(self._width + 1)] for _ in range(self._height + 1)]
 
     def inside_circle(self, circle: Circle) -> bool:

@@ -1,5 +1,4 @@
 import random
-from typing import Tuple
 
 import numpy as np
 
@@ -28,7 +27,7 @@ def random_size(radius: float) -> float:
     return radius * noise
 
 
-def random_position(width: int, height: int) -> Tuple[int, int]:
+def random_position(width: int, height: int) -> tuple[int, int]:
     return (
         random.randint(0, width - 1),
         random.randint(0, height - 1)

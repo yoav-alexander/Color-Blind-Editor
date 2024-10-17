@@ -1,0 +1,91 @@
+palates:
+  - name: "Protanopia"
+    colors:
+      subject:
+        - "#FF0000"
+        - "#D4A190"
+        - "#FFA07A"
+      background:
+        - "#00FF00"
+        - "#1E90FF"
+        - "#008080"
+  - name: "Deuteranopia"
+    colors:
+      subject:
+        - "#FFCC00"
+        - "#FF9900"
+        - "#FF6600"
+      background:
+        - "#008000"
+        - "#0066CC"
+        - "#3399FF"
+  - name: "Tritanopia"
+    colors:
+      subject:
+        - "#FFCC00"
+        - "#FFFF00"
+        - "#FFCC99"
+      background:
+        - "#800080"
+        - "#0066CC"
+        - "#4682B4"
+  - name: "Monochromacy"
+    colors:
+      subject:
+        - "#666666"
+        - "#999999"
+        - "#CCCCCC"
+      background:
+        - "#000000"
+        - "#333333"
+        - "#666666"
+  - name: "Protanomaly"
+    colors:
+      subject:
+        - "#FF6347"
+        - "#FF4500"
+        - "#DC143C"
+      background:
+        - "#00FA9A"
+        - "#1E90FF"
+        - "#4682B4"
+  - name: "Deuteranomaly"
+    colors:
+      subject:
+        - "#FFFF00"
+        - "#FFD700"
+        - "#FFA500"
+      background:
+        - "#228B22"
+        - "#0000FF"
+        - "#00CED1"
+  - name: "Gray-Pink"
+    colors:
+      subject:
+        - "#CC5267"
+        - "#E29E93"
+        - "#97506D"
+        - "#DE9091"
+      background:
+        - "#424340"
+        - "#B8B9B4"
+        - "#A0A199"
+  - name: "Gray-Red"
+    colors:
+      subject:
+        - "#c45c6b"
+        - "#bc646b"
+        - "#c55a6e"
+        - "#934451"
+        - "#74383e"
+        - "#7f3c4d"
+        - "#a75044"
+      background:
+        - "#6c6c6b"
+        - "#7d656c"
+        - "#6b7253"
+        - "#53736b"
+        - "#6c6b7e"
+        - "#5c736b"
+        - "#3b4342"
+        - "#2c3c3c"
